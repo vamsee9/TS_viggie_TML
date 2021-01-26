@@ -8,7 +8,7 @@ This project is a starting point for a Transfer Machine Learning Flutter applica
 
 A few resources to get you started if this is Transfer Machine Learning Flutter project:
 
-[!Transfer Machine Learning Flowchart](TML.png)
+![Transfer Machine Learning Flowchart](TML.png)
 
 - [Tensorflow: transfer machine learning](https://www.tensorflow.org/)
 
