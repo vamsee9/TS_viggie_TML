@@ -19,11 +19,10 @@ class _HomeState extends State<Home> {
   @override
   void initState() {
     super.initState();
-    loadModel().then((value)
-    {
+    loadModel().then((value) {
       setState(() {});
     });
-}
+  }
 
   loadModel() {}
 
@@ -32,3 +31,4 @@ class _HomeState extends State<Home> {
     // TODO: implement build
     throw UnimplementedError();
   }
+}
