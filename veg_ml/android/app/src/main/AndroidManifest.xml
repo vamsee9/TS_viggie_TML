@@ -1,5 +1,5 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.veg_ml">
+    package="com.opennxt.veg_ml">
    <application
         android:label="veg_ml"
         android:icon="@mipmap/ic_launcher">
