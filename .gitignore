@@ -40,6 +40,9 @@ $RECYCLE.BIN/
 # Windows shortcuts
 *.lnk
 /train/
+*.tflite
+*.pb
+*.txt
 
 # End of https://www.toptal.com/developers/gitignore/api/windows,visualstudiocode
 
