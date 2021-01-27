@@ -75,8 +75,59 @@ class _HomeState extends State<Home> {
       ),
       body: Container(
         color: Colors.black.withOpacity(0.9),
-        padding: EdgeInsets.all(30),
-        decoration: BoxDecoration(color: Color(0xFF2A363B)),
+        padding: EdgeInsets.symmetric(horizontal: 35, vertical: 50),
+        child: Container(
+          alignment: Alignment.center,
+          padding: EdgeInsets.all(30),
+          decoration: BoxDecoration(
+            color: Color(0xFF2A363B),
+            borderRadius: BorderRadius.circular(30),
+          ),
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Container(
+                child: Center(
+                    child: _loading == true
+                        ? null
+                        : Container(
+                            child: Column(
+                              children: [
+                                Container(
+                                  height: 250,
+                                  width: 250,
+                                  child: ClipRRect(
+                                    borderRadius: BorderRadius.circular(30),
+                                    child: Image.file(
+                                      _image,
+                                      fit: BoxFit.fill,
+                                    ),
+                                  ),
+                                ),
+                                Divider(
+                                  height: 25,
+                                  thickness: 1,
+                                ),
+                                _output != null
+                                    ? Text(
+                                        'The object is: ${_output[0]['label']}!',
+                                        style: TextStyle(
+                                            color: Colors.white,
+                                            fontSize: 18,
+                                            fontWeight: FontWeight.w400),
+                                      )
+                                    : Container(),
+                                Divider(
+                                  height: 25,
+                                  thickness: 1,
+                                ),
+                              ],
+                            ),
+                          )),
+              )
+            ],
+          ),
+        ),
       ),
     );
   }
