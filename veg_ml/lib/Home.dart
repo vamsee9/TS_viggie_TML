@@ -59,6 +59,16 @@ class _HomeState extends State<Home> {
     classifyImage(_image);
   }
 
+  pickGalleryImage() async {
+    var image = await picker.getImage(source: ImageSource.gallery);
+    if (image == null) return null;
+
+    setState(() {
+      _image = File(image.path);
+    });
+    classifyImage(_image);
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -145,7 +155,25 @@ class _HomeState extends State<Home> {
                         ),
                       ),
                     ),
-                    SizedBox(height: 30,),
+                    SizedBox(
+                      height: 30,
+                    ),
+                    GestureDetector(
+                      onTap: pickGalleryImage,
+                      child: Container(
+                        width: MediaQuery.of(context).size.width - 200,
+                        alignment: Alignment.center,
+                        padding:
+                            EdgeInsets.symmetric(horizontal: 24, vertical: 17),
+                        decoration: BoxDecoration(
+                            color: Colors.blueGrey[600],
+                            borderRadius: BorderRadius.circular(15)),
+                        child: Text(
+                          'Pick From Gallery',
+                          style: TextStyle(color: Colors.white, fontSize: 16),
+                        ),
+                      ),
+                    ),
                   ],
                 ),
               )
