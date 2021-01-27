@@ -88,42 +88,66 @@ class _HomeState extends State<Home> {
             children: [
               Container(
                 child: Center(
-                    child: _loading == true
-                        ? null
-                        : Container(
-                            child: Column(
-                              children: [
-                                Container(
-                                  height: 250,
-                                  width: 250,
-                                  child: ClipRRect(
-                                    borderRadius: BorderRadius.circular(30),
-                                    child: Image.file(
-                                      _image,
-                                      fit: BoxFit.fill,
-                                    ),
+                  child: _loading == true
+                      ? null
+                      : Container(
+                          child: Column(
+                            children: [
+                              Container(
+                                height: 250,
+                                width: 250,
+                                child: ClipRRect(
+                                  borderRadius: BorderRadius.circular(30),
+                                  child: Image.file(
+                                    _image,
+                                    fit: BoxFit.fill,
                                   ),
                                 ),
-                                Divider(
-                                  height: 25,
-                                  thickness: 1,
-                                ),
-                                _output != null
-                                    ? Text(
-                                        'The object is: ${_output[0]['label']}!',
-                                        style: TextStyle(
-                                            color: Colors.white,
-                                            fontSize: 18,
-                                            fontWeight: FontWeight.w400),
-                                      )
-                                    : Container(),
-                                Divider(
-                                  height: 25,
-                                  thickness: 1,
-                                ),
-                              ],
-                            ),
-                          )),
+                              ),
+                              Divider(
+                                height: 25,
+                                thickness: 1,
+                              ),
+                              _output != null
+                                  ? Text(
+                                      'The object is: ${_output[0]['label']}!',
+                                      style: TextStyle(
+                                          color: Colors.white,
+                                          fontSize: 18,
+                                          fontWeight: FontWeight.w400),
+                                    )
+                                  : Container(),
+                              Divider(
+                                height: 25,
+                                thickness: 1,
+                              ),
+                            ],
+                          ),
+                        ),
+                ),
+              ),
+              Container(
+                child: Column(
+                  children: [
+                    GestureDetector(
+                      onTap: pickImage,
+                      child: Container(
+                        width: MediaQuery.of(context).size.width - 200,
+                        alignment: Alignment.center,
+                        padding:
+                            EdgeInsets.symmetric(horizontal: 24, vertical: 17),
+                        decoration: BoxDecoration(
+                            color: Colors.blueGrey[600],
+                            borderRadius: BorderRadius.circular(15)),
+                        child: Text(
+                          'Take A Photo',
+                          style: TextStyle(color: Colors.white, fontSize: 16),
+                        ),
+                      ),
+                    ),
+                    SizedBox(height: 30,),
+                  ],
+                ),
               )
             ],
           ),
