@@ -46,7 +46,7 @@ class _HomeState extends State<Home> {
 
   loadModel() async {
     await Tflite.loadModel(
-        model: 'model.tfile', labels: 'labels.txt');
+        model: 'assets/model.tflite', labels: 'assets/labels.txt');
   }
 
   pickImage() async {
@@ -104,8 +104,8 @@ class _HomeState extends State<Home> {
                           child: Column(
                             children: [
                               Container(
-                                height: 250,
-                                width: 250,
+                                height: 400,
+                                width: 390,
                                 child: ClipRRect(
                                   borderRadius: BorderRadius.circular(30),
                                   child: Image.file(
