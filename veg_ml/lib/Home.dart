@@ -75,10 +75,10 @@ class _HomeState extends State<Home> {
       appBar: AppBar(
         backgroundColor: Colors.black,
         title: Text(
-          'Fruits and Veggies Neural Network',
+          'TangeloML',
           style: TextStyle(
               color: Colors.white,
-              fontWeight: FontWeight.w200,
+              fontWeight: FontWeight.bold,
               fontSize: 20,
               letterSpacing: 0.8),
         ),
@@ -117,6 +117,7 @@ class _HomeState extends State<Home> {
                               Divider(
                                 height: 25,
                                 thickness: 1,
+                                color: Colors.white,
                               ),
                               _output != null
                                   ? Text(
@@ -130,6 +131,7 @@ class _HomeState extends State<Home> {
                               Divider(
                                 height: 25,
                                 thickness: 1,
+                                color: Colors.white,
                               ),
                             ],
                           ),
